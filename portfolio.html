@@ -1,11 +1,14 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kannan | Full-Stack Developer & Security Enthusiast</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,300 +16,321 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0b0f19',
-                        cardBg: '#111827',
-                        accent: '#6366f1',
-                        accentGlow: 'rgba(99, 102, 241, 0.3)'
+                        darkBg: '#000000',
+                        cardBg: '#0a0a0a',
+                        accent: '#ffffff',
+                        accentGlow: 'rgba(255, 255, 255, 0.15)'
                     }
                 }
             }
         }
     </script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
+            background-color: #000000;
             color: #f3f4f6;
         }
         .glass-card {
-            background: rgba(17, 24, 39, 0.7);
+            background: rgba(15, 15, 15, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .glow-effect:hover {
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.12);
         }
     </style>
 </head>
-<body class="bg-darkBg text-gray-100 selection:bg-indigo-500 selection:text-white">
+<body class="bg-darkBg text-gray-100 selection:bg-white selection:text-black">
 
-    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-gray-800 transition-all duration-300" id="navbar">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-neutral-800 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#hero" class="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                KANNAN
+            <a href="#hero" class="text-2xl font-extrabold tracking-wider text-white">
+                KANNAN<span class="text-neutral-400">.MCA</span>
             </a>
             
             <div class="hidden md:flex items-center space-x-8 font-medium">
-                <a href="#about" class="hover:text-indigo-400 transition">About</a>
-                <a href="#skills" class="hover:text-indigo-400 transition">Tech Stack</a>
-                <a href="#architecture" class="hover:text-indigo-400 transition">Security & Architecture</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
-                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-lg shadow-indigo-500/20">Let's Connect</a>
+                <a href="#about" class="hover:text-white text-neutral-400 transition">About</a>
+                <a href="#skills" class="hover:text-white text-neutral-400 transition">Tech Stack</a>
+                <a href="#architecture" class="hover:text-white text-neutral-400 transition">Security & Architecture</a>
+                <a href="#projects" class="hover:text-white text-neutral-400 transition">Projects</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-white text-black hover:bg-neutral-200 font-bold transition shadow-lg shadow-white/10">Let's Connect</a>
             </div>
 
-            <button id="menu-btn" class="md:hidden text-2xl text-gray-300 focus:outline-none">
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-darkBg border-b border-gray-800 space-y-4">
-            <a href="#about" class="block hover:text-indigo-400">About</a>
-            <a href="#skills" class="block hover:text-indigo-400">Tech Stack</a>
-            <a href="#architecture" class="block hover:text-indigo-400">Security & Architecture</a>
-            <a href="#projects" class="block hover:text-indigo-400">Projects</a>
-            <a href="#contact" class="block text-center py-2.5 rounded-xl bg-indigo-600 text-white">Let's Connect</a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-darkBg border-b border-neutral-800 space-y-4">
+            <a href="#about" class="block hover:text-white text-neutral-400">About</a>
+            <a href="#skills" class="block hover:text-white text-neutral-400">Tech Stack</a>
+            <a href="#architecture" class="block hover:text-white text-neutral-400">Security & Architecture</a>
+            <a href="#projects" class="block hover:text-white text-neutral-400">Projects</a>
+            <a href="#contact" class="block text-center py-2.5 rounded-xl bg-white text-black font-bold">Let's Connect</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center pt-28 pb-16 px-6 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Background Ambient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-neutral-800/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
             <div class="space-y-6">
-                <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-300 text-sm font-medium">
-                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-                    <span> Full-Stack Developer</span>
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-sm font-medium">
+                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    <span>MCA Graduate & Full-Stack Engineer</span>
                 </div>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-                    Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Kannan</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                    Hi, I'm <span class="text-white underline decoration-neutral-600 decoration-2 underline-offset-8">Kannan</span>
                 </h1>
-                <p class="text-lg text-gray-400 leading-relaxed">
+                <p class="text-lg text-neutral-400 leading-relaxed">
                     I build scalable web applications with multi-ecosystem backend architectures (PHP/Laravel prioritized, alongside Java/Spring Boot), robust database management, and interactive modern frontends. Backed by solid cloud, version control, and deployment operations.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+                    <a href="#projects" class="px-8 py-3.5 rounded-xl bg-white hover:bg-neutral-200 font-bold text-black transition shadow-lg shadow-white/10 flex items-center gap-2">
                         <span>Explore Work</span>
                         <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
-                    <a href="#contact" class="px-8 py-3.5 rounded-xl glass-card hover:bg-gray-800/80 font-semibold text-gray-200 transition">
+                    <a href="#contact" class="px-8 py-3.5 rounded-xl glass-card hover:bg-neutral-900 font-semibold text-neutral-300 transition">
                         Get in Touch
                     </a>
                 </div>
             </div>
 
-            <div class="glass-card rounded-2xl p-6 shadow-2xl border border-gray-800 relative glow-effect transition-all duration-300">
-                <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-800">
+            <!-- Interactive Code Window Component -->
+            <div class="glass-card rounded-2xl p-6 shadow-2xl border border-neutral-800 relative glow-effect transition-all duration-300">
+                <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800">
                     <div class="flex space-x-2">
-                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-neutral-700"></span>
+                        <span class="w-3 h-3 rounded-full bg-neutral-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-white"></span>
                     </div>
-                    <span class="text-xs text-gray-400 font-mono">kannan-profile.config.js</span>
+                    <span class="text-xs text-neutral-400 font-mono">kannan-profile.config.js</span>
                 </div>
-                <pre class="text-sm font-mono text-gray-300 overflow-x-auto leading-relaxed"><code><span class="text-purple-400">const</span> <span class="text-yellow-300">developer</span> = {
-  <span class="text-blue-400">name</span>: <span class="text-green-300">"Kannan"</span>,
-  <span class="text-blue-400">degree</span>: <span class="text-green-300">"MCA (Master of Computer Applications)"</span>,
-  <span class="text-blue-400">frontend</span>: [<span class="text-green-300">"React.js"</span>, <span class="text-green-300">"Tailwind CSS"</span>, <span class="text-green-300">"Bootstrap"</span>],
-  <span class="text-blue-400">backendPrimary</span>: [<span class="text-green-300">"PHP"</span>, <span class="text-green-300">"Laravel"</span>, <span class="text-green-300">"MySQL"</span>],
-  <span class="text-blue-400">backendSecondary</span>: [<span class="text-green-300">"Java"</span>, <span class="text-green-300">"Spring Boot"</span>],
-  <span class="text-blue-400">versionControl</span>: [<span class="text-green-300">"Git"</span>, <span class="text-green-300">"GitHub Pages"</span>],
-  <span class="text-blue-400">deployment</span>: [<span class="text-green-300">"Vercel"</span>, <span class="text-green-300">"Netlify"</span>, <span class="text-green-300">"Render"</span>],
-  <span class="text-blue-400">security</span>: [<span class="text-green-300">"RBAC"</span>, <span class="text-green-300">"Web & Network Security"</span>, <span class="text-green-300">"Auth"</span>],
-  <span class="text-indigo-400">status</span>: <span class="text-green-300">"Ready to deploy innovative ideas!"</span>
+                <pre class="text-sm font-mono text-neutral-300 overflow-x-auto leading-relaxed"><code><span class="text-white">const</span> <span class="text-neutral-300">developer</span> = {
+  <span class="text-neutral-400">name</span>: <span class="text-white">"Kannan"</span>,
+  <span class="text-neutral-400">degree</span>: <span class="text-white">"MCA (Master of Computer Applications)"</span>,
+  <span class="text-neutral-400">frontend</span>: [<span class="text-white">"React.js"</span>, <span class="text-white">"Tailwind CSS"</span>, <span class="text-white">"Bootstrap"</span>],
+  <span class="text-neutral-400">backendPrimary</span>: [<span class="text-white">"PHP"</span>, <span class="text-white">"Laravel"</span>, <span class="text-white">"MySQL"</span>],
+  <span class="text-neutral-400">backendSecondary</span>: [<span class="text-white">"Java"</span>, <span class="text-white">"Spring Boot"</span>],
+  <span class="text-neutral-400">versionControl</span>: [<span class="text-white">"Git"</span>, <span class="text-white">"GitHub Pages"</span>],
+  <span class="text-neutral-400">deployment</span>: [<span class="text-white">"Vercel"</span>, <span class="text-white">"Netlify"</span>, <span class="text-white">"Render"</span>],
+  <span class="text-neutral-400">security</span>: [<span class="text-white">"RBAC"</span>, <span class="text-white">"Web & Network Security"</span>, <span class="text-white">"Auth"</span>],
+  <span class="text-neutral-200">status</span>: <span class="text-white">"Ready to deploy innovative ideas!"</span>
 };</code></pre>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-            <h2 class="text-3xl font-bold tracking-tight">About Me</h2>
-            <p class="text-gray-400">Bridging the gap between sleek visual user experiences and resilient, secure system architecture.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">About Me</h2>
+            <p class="text-neutral-400">Bridging the gap between sleek visual user experiences and resilient, secure system architecture.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800 hover:border-indigo-500/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800 hover:border-neutral-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center text-xl">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-                <h3 class="text-xl font-semibold">Academic Excellence</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <h3 class="text-xl font-semibold text-white">Academic Excellence</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Completed my MCA degree, building a powerful theoretical and practical foundation in advanced data structures, software engineering methodologies, and database systems.
                 </p>
             </div>
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800 hover:border-indigo-500/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-xl">
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800 hover:border-neutral-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center text-xl">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <h3 class="text-xl font-semibold">Security First Mindset</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <h3 class="text-xl font-semibold text-white">Security First Mindset</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Expertise in web security measures, strict Authentication protocols, Role-Based Access Control (RBAC), and foundational network security strategies.
                 </p>
             </div>
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800 hover:border-indigo-500/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xl">
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800 hover:border-neutral-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center text-xl">
                     <i class="fa-solid fa-rocket"></i>
                 </div>
-                <h3 class="text-xl font-semibold">Version Control & Deployment</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <h3 class="text-xl font-semibold text-white">Version Control & Deployment</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Proficient in Git workflow, GitHub Pages publishing, alongside modern cloud platform deployments like Vercel, Netlify, and Render.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-20 px-6 bg-gray-900/40 border-y border-gray-800/50">
+    <!-- Tech Stack / Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-neutral-950 border-y border-neutral-900">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <h2 class="text-3xl font-bold tracking-tight">Technical Proficiency</h2>
-                <p class="text-gray-400">The precise toolset I use to conceptualize, construct, secure, version control, and deploy high-performing applications.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Technical Proficiency</h2>
+                <p class="text-neutral-400">The precise toolset I use to conceptualize, construct, secure, version control, and deploy high-performing applications.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-gray-800">
-                    <div class="flex items-center space-x-3 text-indigo-400">
+                <!-- Frontend -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 border border-neutral-800">
+                    <div class="flex items-center space-x-3 text-white">
                         <i class="fa-solid fa-code text-xl"></i>
-                        <h3 class="font-bold text-lg text-gray-200">Frontend Engineering</h3>
+                        <h3 class="font-bold text-lg text-white">Frontend Engineering</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">HTML5 / CSS3</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">JavaScript (ES6+)</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-indigo-300 text-xs font-medium border border-indigo-900/50">React.js</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Axios API Handling</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-cyan-300 text-xs font-medium border border-cyan-900/50">Tailwind CSS</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-purple-300 text-xs font-medium border border-purple-900/50">Bootstrap</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">HTML5 / CSS3</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">JavaScript (ES6+)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-700">React.js</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Axios API Handling</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-200 text-xs font-medium border border-neutral-800">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Bootstrap</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-gray-800">
-                    <div class="flex items-center space-x-3 text-purple-400">
+                <!-- Backend (PHP Prioritized) -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 border border-neutral-800">
+                    <div class="flex items-center space-x-3 text-white">
                         <i class="fa-solid fa-database text-xl"></i>
-                        <h3 class="font-bold text-lg text-gray-200">Backend & Database</h3>
+                        <h3 class="font-bold text-lg text-white">Backend & Database</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-red-400 text-xs font-medium border border-red-900/50">PHP (Primary)</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-red-300 text-xs font-medium border border-red-900/50">Laravel Framework</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-blue-300 text-xs font-medium border border-blue-900/50">MySQL Database</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-amber-400 text-xs font-medium border border-amber-900/50">Java (Secondary)</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-green-400 text-xs font-medium border border-green-900/50">Spring Boot</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">RESTful APIs</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-700">PHP (Primary)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-200 text-xs font-medium border border-neutral-700">Laravel Framework</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">MySQL Database</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-400 text-xs font-medium border border-neutral-800">Java (Secondary)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Spring Boot</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">RESTful APIs</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-gray-800">
-                    <div class="flex items-center space-x-3 text-green-400">
+                <!-- Git, GitHub Pages & Deployment Tools -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 border border-neutral-800">
+                    <div class="flex items-center space-x-3 text-white">
                         <i class="fa-solid fa-code-branch text-xl"></i>
-                        <h3 class="font-bold text-lg text-gray-200">Git & Deployment</h3>
+                        <h3 class="font-bold text-lg text-white">Git & Deployment</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-orange-400 text-xs font-medium border border-orange-900/50">Git Version Control</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-200 text-xs font-medium border border-gray-700">GitHub Pages</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-white text-xs font-medium border border-gray-700">Vercel</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-teal-300 text-xs font-medium border border-teal-900/50">Netlify</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-blue-300 text-xs font-medium border border-blue-900/50">Render Cloud</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-200 text-xs font-medium border border-neutral-800">Git Version Control</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">GitHub Pages</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800">Vercel</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Netlify</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Render Cloud</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-gray-800">
-                    <div class="flex items-center space-x-3 text-yellow-400">
+                <!-- Operations & Security -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 border border-neutral-800">
+                    <div class="flex items-center space-x-3 text-white">
                         <i class="fa-solid fa-terminal text-xl"></i>
-                        <h3 class="font-bold text-lg text-gray-200">Ops & Security</h3>
+                        <h3 class="font-bold text-lg text-white">Ops & Security</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-yellow-300 text-xs font-medium border border-yellow-900/50">Linux Environment</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">CMD & PowerShell</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-cyan-300 text-xs font-medium border border-cyan-900/50">RBAC & Auth</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Web & Network Security</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Linux Environment</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">CMD & PowerShell</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800">RBAC & Auth</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-neutral-900 text-neutral-300 text-xs font-medium border border-neutral-800">Web & Network Security</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Architecture & Core Techniques Section -->
     <section id="architecture" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-            <h2 class="text-3xl font-bold tracking-tight">Core Engineering Capabilities</h2>
-            <p class="text-gray-400">Beyond simple coding — focused on secure application architecture, multi-framework versatility, and rapid cloud deployment.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Core Engineering Capabilities</h2>
+            <p class="text-neutral-400">Beyond simple coding — focused on secure application architecture, multi-framework versatility, and rapid cloud deployment.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800">
-                <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">01</div>
-                <h3 class="text-xl font-bold">Frontend-Backend Bridge</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+            <!-- Fullstack Connection -->
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800">
+                <div class="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center font-bold">01</div>
+                <h3 class="text-xl font-bold text-white">Frontend-Backend Bridge</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Seamlessly connecting React.js SPAs with robust PHP/Laravel backend endpoints (primary) or Spring Boot microservices utilizing Axios for structured API exchanges and token management.
                 </p>
             </div>
 
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800">
-                <div class="w-10 h-10 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center font-bold">02</div>
-                <h3 class="text-xl font-bold">Git & Cloud CI/CD Hosting</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+            <!-- Version Control & CI/CD Deployment -->
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800">
+                <div class="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center font-bold">02</div>
+                <h3 class="text-xl font-bold text-white">Git & Cloud CI/CD Hosting</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Managing code branches seamlessly via Git, publishing static sites to GitHub Pages, and configuring automated production deployments on Vercel, Netlify, and Render.
                 </p>
             </div>
 
-            <div class="glass-card p-8 rounded-2xl space-y-4 border border-gray-800">
-                <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">03</div>
-                <h3 class="text-xl font-bold">Security & Shell Automation</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
+            <!-- Security & Systems -->
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-neutral-800">
+                <div class="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-700 text-white flex items-center justify-center font-bold">03</div>
+                <h3 class="text-xl font-bold text-white">Security & Shell Automation</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
                     Enforcing RBAC and authentication standards while leveraging Linux administration, command-line operations, and PowerShell scripts for workflow automation.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 px-6 bg-gray-900/40 border-t border-gray-800/50">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-neutral-950 border-t border-neutral-900">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <h2 class="text-3xl font-bold tracking-tight">Featured Projects</h2>
-                <p class="text-gray-400">Explore production-grade applications highlighting both PHP/Laravel (primary focus) and Java Spring Boot deployments.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Featured Projects</h2>
+                <p class="text-neutral-400">Explore production-grade applications highlighting both PHP/Laravel (primary focus) and Java Spring Boot deployments.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-indigo-500/50 transition">
+                <!-- Project 1: PHP Laravel (Primary Preference) -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-neutral-800 flex flex-col justify-between group hover:border-white transition">
                     <div class="p-8 space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-red-950 text-red-300 border border-red-800">PHP & Laravel (Primary)</span>
-                            <div class="flex space-x-3 text-gray-400">
-                                <a href="#" class="hover:text-indigo-400"><i class="fa-brands fa-github text-lg"></i></a>
-                                <a href="#" class="hover:text-indigo-400"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-neutral-900 text-white border border-neutral-700">PHP & Laravel (Primary)</span>
+                            <div class="flex space-x-3 text-neutral-400">
+                                <a href="#" class="hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="#" class="hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold group-hover:text-indigo-400 transition">Secure Enterprise RBAC Dashboard</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-neutral-200 transition">Secure Enterprise RBAC Dashboard</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
                             A production-ready full-stack application built primarily using <strong>PHP & Laravel</strong> coupled with React.js. Features strict authentication, advanced granular Role-Based Access Control (RBAC), and full MySQL database optimization.
                         </p>
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-red-400">PHP</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-red-300">Laravel</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-indigo-300">React.js</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-blue-300">MySQL</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-blue-400">Render</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-white border border-neutral-800">PHP</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-200 border border-neutral-800">Laravel</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-300 border border-neutral-800">React.js</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-300 border border-neutral-800">MySQL</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-400 border border-neutral-800">Render</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-indigo-500/50 transition">
+                <!-- Project 2: Java Spring Boot (Secondary) -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-neutral-800 flex flex-col justify-between group hover:border-white transition">
                     <div class="p-8 space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-950 text-amber-300 border border-amber-800">Java & Spring Boot</span>
-                            <div class="flex space-x-3 text-gray-400">
-                                <a href="#" class="hover:text-indigo-400"><i class="fa-brands fa-github text-lg"></i></a>
-                                <a href="#" class="hover:text-indigo-400"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-neutral-900 text-neutral-300 border border-neutral-700">Java & Spring Boot</span>
+                            <div class="flex space-x-3 text-neutral-400">
+                                <a href="#" class="hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="#" class="hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold group-hover:text-indigo-400 transition">Enterprise Spring Security Microservice</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-neutral-200 transition">Enterprise Spring Security Microservice</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
                             A high-performance backend platform utilizing <strong>Java and Spring Boot</strong> for stateless API authentication, network security filters, and robust relational mapping with MySQL.
                         </p>
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-amber-300">Java</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-green-300">Spring Boot</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-cyan-300">Tailwind CSS</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-gray-800 text-teal-300">Netlify</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-white border border-neutral-800">Java</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-200 border border-neutral-800">Spring Boot</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-300 border border-neutral-800">Tailwind CSS</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-neutral-900 text-neutral-400 border border-neutral-800">Netlify</span>
                         </div>
                     </div>
                 </div>
@@ -314,48 +338,51 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="glass-card p-8 md:p-12 rounded-3xl border border-gray-800 space-y-8 relative overflow-hidden">
-            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="glass-card p-8 md:p-12 rounded-3xl border border-neutral-800 space-y-8 relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="text-center space-y-4">
-                <h2 class="text-3xl font-bold tracking-tight">Let's Build Something Great Together</h2>
-                <p class="text-gray-400">Whether you have an opening, a freelance project, or just want to discuss web security and development—my inbox is open.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Let's Build Something Great Together</h2>
+                <p class="text-neutral-400">Whether you have an opening, a freelance project, or just want to discuss web security and development—my inbox is open.</p>
             </div>
 
             <form class="space-y-6 relative z-10" onsubmit="event.preventDefault(); alert('Thank you, Kannan will get back to you soon!');">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label class="text-sm font-medium text-gray-300">Your Name</label>
-                        <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-800 text-gray-100 focus:outline-none focus:border-indigo-500 transition">
+                        <label class="text-sm font-medium text-neutral-300">Your Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-white focus:outline-none focus:border-white transition">
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-medium text-gray-300">Your Email</label>
-                        <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-800 text-gray-100 focus:outline-none focus:border-indigo-500 transition">
+                        <label class="text-sm font-medium text-neutral-300">Your Email</label>
+                        <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-white focus:outline-none focus:border-white transition">
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-300">Message</label>
-                    <textarea rows="4" required placeholder="Discussing a project or opportunity..." class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-800 text-gray-100 focus:outline-none focus:border-indigo-500 transition"></textarea>
+                    <label class="text-sm font-medium text-neutral-300">Message</label>
+                    <textarea rows="4" required placeholder="Discussing a project or opportunity..." class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-white focus:outline-none focus:border-white transition"></textarea>
                 </div>
-                <button type="submit" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition shadow-lg shadow-indigo-600/30">
+                <button type="submit" class="w-full py-4 rounded-xl bg-white hover:bg-neutral-200 text-black font-bold transition shadow-lg shadow-white/10">
                     Send Message
                 </button>
             </form>
         </div>
     </section>
 
-    <footer class="py-8 border-t border-gray-800 text-center text-sm text-gray-500">
+    <!-- Footer -->
+    <footer class="py-8 border-t border-neutral-900 text-center text-sm text-neutral-500">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>© 2026 Kannan. All rights reserved. Full-Stack Developer.</p>
+            <p>© 2026 Kannan. All rights reserved. MCA Graduate & Full-Stack Engineer.</p>
             <div class="flex space-x-6 text-xl">
-                <a href="https://github.com/kannan-full-stack/Portfolio.git" class="hover:text-indigo-400 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-indigo-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/_kannan__404?igsi=MTRxMDZhaG9kbmtsYQ==" class="hover:text-indigo-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Scripts -->
     <script>
         // Mobile Menu Toggle Logic
         const menuBtn = document.getElementById('menu-btn');
@@ -374,4 +401,3 @@
     </script>
 </body>
 </html>
-
